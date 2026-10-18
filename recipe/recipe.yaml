@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: crossenv
-  version: 1.6.1
+  version: "1.6.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,13 +10,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/crossenv-${{ version }}.tar.gz
-  sha256: 5b7e2f231d9a3c6ea56ce3b7fd7acbe0f1e310e44a8f699909910f1334db1a31
+  sha256: df83f28fd04a3ae17b85a4a7c8fdc44e4cf6b0d898bf47312864f3e429c7f640
   patches:
     - patches/0004-Only-set-sys.executable-while-cross-python-exists.patch
     - patches/0005-Accept-any-Apple-OS-name-in-the-triple-split.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
